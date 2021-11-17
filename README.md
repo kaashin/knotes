@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Notes
+
+An attempt to build a rapid note taking tool that connects with Notion through its new beta API. 
 
 ## Getting Started
 
@@ -23,8 +25,6 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 Blitz Notions
 Notion Blitz
 Strike Notion
-Notion Scramble
-Rush Notion
-notion Rush
-Notion Dash
+Notion Rush
+
 
