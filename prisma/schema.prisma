@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model users {
+  id           String          @id @default(uuid())
+  email        String          @unique @db.VarChar(100)
+  password     String          @db.VarChar(255)
+  role         users_role?     @default(user)
+  firstName    String?         @db.VarChar(100)
+  lastName     String?         @db.VarChar(100)
+  notionTokens notion_tokens[]
+}
+
+model notion_tokens {
+  id            String  @id @default(uuid())
+  user          users   @relation(fields: [userId], references: [id])
+  userId        String
+  accessToken   String
+  workspaceName String?
+  workspaceIcon String?
+  botId         String?
+  tokenType     String?
+}
+
+enum users_role {
+  admin
+  user
+}
